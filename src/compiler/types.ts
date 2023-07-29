@@ -32,7 +32,7 @@ interface ModActionType {
   FileName: string;
 }
 
-interface ModAssociation {
+interface ModAssociationType {
   Type: "Mod" | "Dlc" | "Game";
   Name: string;
   Id: string;
@@ -40,7 +40,7 @@ interface ModAssociation {
   MaxVersion: number;
 }
 
-interface PropertyGroupItemType {
+export interface PropertyType {
   Configuration: {
     "#text": string;
     "@_Condition": string;
@@ -64,13 +64,13 @@ interface PropertyGroupItemType {
   RootNamespace: string;
   ReloadAudioSystem: boolean;
   ModReferences: {
-    Association: ModAssociation[] | ModAssociation;
+    Association: ModAssociationType[] | ModAssociationType;
   };
   ModDependencies: {
-    Association: ModAssociation[] | ModAssociation;
+    Association: ModAssociationType[] | ModAssociationType;
   };
   ModBlockers: {
-    Association: ModAssociation[] | ModAssociation;
+    Association: ModAssociationType[] | ModAssociationType;
   }[];
   ModActions: {
     Action: ModActionType[] | ModActionType;
@@ -83,7 +83,7 @@ interface PropertyGroupItemType {
 export interface InputSchema {
   "?xml": XMLMeta;
   Project: {
-    PropertyGroup: PropertyGroupItemType[] | PropertyGroupItemType;
+    PropertyGroup: PropertyType[] | PropertyType;
     ItemGroup: {
       Folder?: {
         "@_Include": string;
@@ -112,19 +112,19 @@ export interface OutputSchema {
       [key: string]: string | number;
     };
     Dependencies?: {
-      Game?: ModAssociation[] | ModAssociation;
-      Mod?: ModAssociation[] | ModAssociation;
-      Dlc?: ModAssociation[] | ModAssociation;
+      Game?: ModAssociationType[] | ModAssociationType;
+      Mod?: ModAssociationType[] | ModAssociationType;
+      Dlc?: ModAssociationType[] | ModAssociationType;
     };
     References?: {
-      Game?: ModAssociation[] | ModAssociation;
-      Mod?: ModAssociation[] | ModAssociation;
-      Dlc?: ModAssociation[] | ModAssociation;
+      Game?: ModAssociationType[] | ModAssociationType;
+      Mod?: ModAssociationType[] | ModAssociationType;
+      Dlc?: ModAssociationType[] | ModAssociationType;
     };
     Blocks?: {
-      Game?: ModAssociation[] | ModAssociation;
-      Mod?: ModAssociation[] | ModAssociation;
-      Dlc?: ModAssociation[] | ModAssociation;
+      Game?: ModAssociationType[] | ModAssociationType;
+      Mod?: ModAssociationType[] | ModAssociationType;
+      Dlc?: ModAssociationType[] | ModAssociationType;
     };
     Files: {
       File: OutFileType[] | OutFileType;
