@@ -11,7 +11,7 @@ type ModActionSetEnum =
   | "OnGetDLLPath"
   | "OnCreateModUserData";
 type ModActionTypeEnum = "OnModActivated";
-type ModContentTypeEnum =
+export type ModContentTypeEnum =
   | "Custom"
   | "Map"
   | "MapScript"
@@ -110,6 +110,12 @@ export interface OutputModAssociationType {
   "@_title": string;
 }
 
+export interface EntryPointType {
+  Name?: string;
+  Description?: string;
+  "@_type"?: ModContentTypeEnum;
+  "@_file"?: string;
+}
 export interface OutputSchema {
   "?xml": XMLMeta;
   Mod: {
@@ -148,12 +154,7 @@ export interface OutputSchema {
       };
     };
     EntryPoints: {
-      EntryPoint: {
-        Name: string;
-        Description: string;
-        "@_type": ModContentTypeEnum;
-        "@_file": string;
-      }[];
+      EntryPoint: EntryPointType[] | EntryPointType;
     };
   };
 }

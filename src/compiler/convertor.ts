@@ -1,3 +1,4 @@
+import { EntryPointType, ModContentTypeEnum } from "./types";
 /* eslint-disable @typescript-eslint/naming-convention */
 import {
   InputSchema,
@@ -190,7 +191,30 @@ class ModActionConvertor extends Convertor {
 
 class ModContentConvertor extends Convertor {
   convert(inputObj: InputSchema, outputObj: OutputSchema) {
-    // TODO
+    const contentList = wrap(getDefaultProperty(inputObj).ModContent?.Content);
+    if (!contentList) {
+      return;
+    }
+
+    if (!outputObj.Mod?.Actions) {
+      if (!outputObj.Mod) {
+        outputObj.Mod = {} as any;
+      }
+      outputObj.Mod.EntryPoints = {
+        EntryPoint: [],
+      } as any;
+    }
+
+    const entryPoints: EntryPointType[] = contentList.map((content) => {
+      return {
+        Name: content?.Name,
+        Description: content?.Description,
+        "@_file": content?.FileName,
+        "@_type": content?.Type,
+      };
+    });
+
+    outputObj!.Mod!.EntryPoints!.EntryPoint = unwrap(entryPoints);
   }
 }
 
