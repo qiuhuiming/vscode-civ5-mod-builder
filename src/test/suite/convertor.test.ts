@@ -11,6 +11,7 @@ import {
   ModActionConvertor,
   ModAssociationConvertor,
   ModContentConvertor,
+  ModFileConvertor,
 } from "../../compiler/convertor";
 import { InputSchema, OutputSchema } from "../../compiler/types";
 
@@ -46,6 +47,15 @@ suite("Convertor Test Suite", () => {
 
   test("ModContentConvertor Test", () => {
     const convertor = new ModContentConvertor();
+    const input: InputSchema = testInputJs as any;
+    const output = {} as OutputSchema;
+    convertor.convert(input, output);
+    const outputJSON = JSON.stringify(output);
+    console.log(outputJSON);
+  });
+
+  test("ModFileConvertor Test", () => {
+    const convertor = new ModFileConvertor();
     const input: InputSchema = testInputJs as any;
     const output = {} as OutputSchema;
     convertor.convert(input, output);

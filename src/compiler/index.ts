@@ -3,7 +3,7 @@ import { XMLBuilder, XMLParser } from "fast-xml-parser";
 import { InputSchema, OutputSchema } from "./types";
 import {
   Convertor,
-  FileConvertor,
+  ModFileConvertor,
   MetaConvertor,
   ModActionConvertor,
   ModAssociationConvertor,
@@ -21,7 +21,7 @@ export function compile(input: string): string {
     new ModAssociationConvertor(),
     new ModActionConvertor(),
     new ModContentConvertor(),
-    new FileConvertor(),
+    new ModFileConvertor(),
   ];
 
   convertors.forEach((c) => c.convert(inputObj, outputObj));

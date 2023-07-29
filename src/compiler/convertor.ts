@@ -218,9 +218,37 @@ class ModContentConvertor extends Convertor {
   }
 }
 
-class FileConvertor extends Convertor {
+class ModFileConvertor extends Convertor {
   convert(inputObj: InputSchema, outputObj: OutputSchema) {
-    // TODO
+    const fileItems = inputObj.Project.ItemGroup.find((group) => group.Content)
+      ?.Content;
+    if (!fileItems) {
+      return;
+    }
+
+    if (!outputObj.Mod) {
+      outputObj.Mod = {} as any;
+    }
+    if (!outputObj.Mod.Files) {
+      outputObj.Mod.Files = {} as any;
+    }
+
+    const files = fileItems.map((fileItem) => {
+      // random md5 string (length=32)
+      const md5 =
+        Math.random().toString(16).substring(2, 15) +
+        Math.random().toString(16).substring(2, 15);
+      return {
+        "#text": fileItem["@_Include"],
+        "@_md5": md5.toUpperCase(),
+        "@_import":
+          fileItem.ImportIntoVFS === "True" ? "1" : ("0" as "1" | "0"),
+      };
+    });
+
+    outputObj.Mod.Files = {
+      File: unwrap(files),
+    };
   }
 }
 
@@ -230,5 +258,5 @@ export {
   ModAssociationConvertor,
   ModActionConvertor,
   ModContentConvertor,
-  FileConvertor,
+  ModFileConvertor,
 };
