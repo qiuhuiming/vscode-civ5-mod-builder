@@ -41,10 +41,12 @@ interface ModAssociationType {
 }
 
 export interface PropertyType {
-  Configuration: {
-    "#text": string;
-    "@_Condition": string;
-  };
+  Configuration:
+    | {
+        "#text": string;
+        "@_Condition": string;
+      }
+    | string;
   ProjectGuid: string;
   Name: string;
   Guid: string;

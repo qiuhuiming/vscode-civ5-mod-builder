@@ -24,9 +24,15 @@ function unwrap<T>(item: T[]): T[] | T {
 }
 
 function getDefaultProperty(inputObj: InputSchema): PropertyType {
-  const property = wrap(inputObj.Project.PropertyGroup).find(
-    (pg) => pg.Configuration["#text"] === "Default"
-  );
+  const property = wrap(inputObj.Project.PropertyGroup).find((pg) => {
+    if (typeof pg.Configuration === "string") {
+      return pg?.Configuration === "Default";
+    } else if (typeof pg.Configuration === "object") {
+      return pg?.Configuration["#text"] === "Default";
+    } else {
+      return false;
+    }
+  });
   if (!property) {
     throw new Error("Default property not found");
   }
@@ -42,12 +48,11 @@ class Convertor {
 class MetaConvertor extends Convertor {
   convert(inputObj: InputSchema, outputObj: OutputSchema) {
     if (outputObj.Mod === undefined) {
-      outputObj.Mod = {
-        Properties: {},
-      } as any;
+      outputObj.Mod = {} as any;
     }
-
-    outputObj["?xml"] = inputObj["?xml"];
+    if (!outputObj.Mod.Properties) {
+      outputObj.Mod.Properties = {};
+    }
 
     const property = getDefaultProperty(inputObj);
     Object.entries(property)
@@ -101,13 +106,14 @@ class ModAssociationConvertor extends Convertor {
     const property = getDefaultProperty(inputObj);
     const outputAssociationKey = this.outputAssociationKeyMap[associationName];
 
+    if (!outputObj.Mod) {
+      outputObj.Mod = {} as any;
+    }
     if (!outputObj.Mod?.[outputAssociationKey as OutputModAssociationKey]) {
-      if (!outputObj.Mod) {
-        outputObj.Mod = {} as any;
-      }
       outputObj.Mod[outputAssociationKey as OutputModAssociationKey] =
         {} as any;
     }
+
     const associations = wrap(property[associationName]?.Association)?.reduce(
       (acc, cur) => {
         cur?.Type &&
@@ -153,10 +159,10 @@ class ModAssociationConvertor extends Convertor {
 
 class ModActionConvertor extends Convertor {
   convert(inputObj: InputSchema, outputObj: OutputSchema) {
-    if (!outputObj.Mod?.Actions) {
-      if (!outputObj.Mod) {
-        outputObj.Mod = {} as any;
-      }
+    if (!outputObj.Mod) {
+      outputObj.Mod = {} as any;
+    }
+    if (!outputObj.Mod.Actions) {
       outputObj.Mod.Actions = {} as any;
     }
 
@@ -196,10 +202,10 @@ class ModContentConvertor extends Convertor {
       return;
     }
 
-    if (!outputObj.Mod?.Actions) {
-      if (!outputObj.Mod) {
-        outputObj.Mod = {} as any;
-      }
+    if (!outputObj.Mod) {
+      outputObj.Mod = {} as any;
+    }
+    if (!outputObj.Mod.EntryPoints) {
       outputObj.Mod.EntryPoints = {
         EntryPoint: [],
       } as any;
@@ -235,12 +241,13 @@ class ModFileConvertor extends Convertor {
 
     const files = fileItems.map((fileItem) => {
       // random md5 string (length=32)
-      const md5 =
-        Math.random().toString(16).substring(2, 15) +
-        Math.random().toString(16).substring(2, 15);
+      let md5 = Array.from({ length: 32 });
+      for (let i = 0; i < 32; i++) {
+        md5[i] = Math.floor(Math.random() * 16).toString(16);
+      }
       return {
         "#text": fileItem["@_Include"],
-        "@_md5": md5.toUpperCase(),
+        "@_md5": md5.join("").toUpperCase(),
         "@_import":
           fileItem.ImportIntoVFS === "True" ? "1" : ("0" as "1" | "0"),
       };

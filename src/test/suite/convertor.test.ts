@@ -7,6 +7,7 @@ import * as vscode from "vscode";
 import { XMLBuilder, XMLParser } from "fast-xml-parser";
 import { testInputJs, testOutputJs } from "./testObj";
 import {
+  Convertor,
   MetaConvertor,
   ModActionConvertor,
   ModAssociationConvertor,
@@ -14,6 +15,8 @@ import {
   ModFileConvertor,
 } from "../../compiler/convertor";
 import { InputSchema, OutputSchema } from "../../compiler/types";
+import path = require("path");
+import { compile } from "../../compiler";
 
 suite("Convertor Test Suite", () => {
   vscode.window.showInformationMessage("Start all tests.");
@@ -61,5 +64,35 @@ suite("Convertor Test Suite", () => {
     convertor.convert(input, output);
     const outputJSON = JSON.stringify(output);
     console.log(outputJSON);
+  });
+
+  test("Compile Test", () => {
+    const input: InputSchema = testInputJs as any;
+    const output = {} as OutputSchema;
+
+    const convertors: Convertor[] = [
+      new MetaConvertor(),
+      new ModAssociationConvertor(),
+      new ModActionConvertor(),
+      new ModContentConvertor(),
+      new ModFileConvertor(),
+    ];
+    convertors.forEach((c) => c.convert(input, output));
+
+    const outputJSON = JSON.stringify(output);
+    console.log(outputJSON);
+  });
+
+  test("Compile Integration Test", async () => {
+    const workspaceDir = path.resolve(__dirname, "../../..");
+    // read string from ./data/input_example.xml
+    const dataPath = path.resolve(workspaceDir, "./data/input_example.xml");
+    const input = await vscode.workspace.fs.readFile(vscode.Uri.file(dataPath));
+    const inputStr = input.toString();
+    const outputStr = compile(inputStr);
+
+    // write string to ./data/tmp/ut_output_example.xml
+    const outputPath = path.resolve(workspaceDir, "./data/tmp/ut_output_example.xml");
+    await vscode.workspace.fs.writeFile(vscode.Uri.file(outputPath), Buffer.from(outputStr));
   });
 });

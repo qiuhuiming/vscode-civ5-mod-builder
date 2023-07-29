@@ -11,7 +11,10 @@ import {
 } from "./convertor";
 
 export function compile(input: string): string {
-  const parser = new XMLParser();
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "@_",
+  });
   const inputObj: InputSchema = parser.parse(input);
 
   let outputObj = {} as OutputSchema;
@@ -28,5 +31,5 @@ export function compile(input: string): string {
 
   const builder = new XMLBuilder({ ignoreAttributes: false, format: true });
   const output = builder.build(outputObj);
-  return output;
+  return '<?xml version="1.0" encoding="utf-8"?>\n' + output;
 }
