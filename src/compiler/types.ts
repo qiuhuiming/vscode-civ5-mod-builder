@@ -103,6 +103,13 @@ export interface OutFileType {
   "@_import": "0" | "1";
 }
 
+export interface OutputModAssociationType {
+  "@_id": string;
+  "@_minversion": string;
+  "@_maxversion": string;
+  "@_title": string;
+}
+
 export interface OutputSchema {
   "?xml": XMLMeta;
   Mod: {
@@ -112,19 +119,19 @@ export interface OutputSchema {
       [key: string]: string | number;
     };
     Dependencies?: {
-      Game?: ModAssociationType[] | ModAssociationType;
-      Mod?: ModAssociationType[] | ModAssociationType;
-      Dlc?: ModAssociationType[] | ModAssociationType;
+      Game?: OutputModAssociationType[] | OutputModAssociationType;
+      Mod?: OutputModAssociationType[] | OutputModAssociationType;
+      Dlc?: OutputModAssociationType[] | OutputModAssociationType;
     };
     References?: {
-      Game?: ModAssociationType[] | ModAssociationType;
-      Mod?: ModAssociationType[] | ModAssociationType;
-      Dlc?: ModAssociationType[] | ModAssociationType;
+      Game?: OutputModAssociationType[] | OutputModAssociationType;
+      Mod?: OutputModAssociationType[] | OutputModAssociationType;
+      Dlc?: OutputModAssociationType[] | OutputModAssociationType;
     };
     Blocks?: {
-      Game?: ModAssociationType[] | ModAssociationType;
-      Mod?: ModAssociationType[] | ModAssociationType;
-      Dlc?: ModAssociationType[] | ModAssociationType;
+      Game?: OutputModAssociationType[] | OutputModAssociationType;
+      Mod?: OutputModAssociationType[] | OutputModAssociationType;
+      Dlc?: OutputModAssociationType[] | OutputModAssociationType;
     };
     Files: {
       File: OutFileType[] | OutFileType;
@@ -138,7 +145,7 @@ export interface OutputSchema {
       };
       OnCreateModUserData?: {
         // TODO: add this
-      }
+      };
     };
     EntryPoints: {
       EntryPoint: {

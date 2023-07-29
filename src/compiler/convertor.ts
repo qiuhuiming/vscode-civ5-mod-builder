@@ -1,11 +1,24 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { InputSchema, OutputSchema, PropertyType } from "./types";
+import {
+  InputSchema,
+  OutputModAssociationType,
+  OutputSchema,
+  PropertyType,
+} from "./types";
 
 function wrap<T>(item: T | T[]): T[] {
   if (Array.isArray(item)) {
     return item;
   } else {
     return [item];
+  }
+}
+
+function unwrap<T>(item: T[]): T[] | T {
+  if (item.length === 1) {
+    return item[0];
+  } else {
+    return item;
   }
 }
 
@@ -70,9 +83,68 @@ class MetaConvertor extends Convertor {
   }
 }
 
+type OutputModAssociationKey = "Dependencies" | "Blocks" | "References";
+
 class ModAssociationConvertor extends Convertor {
+  outputAssociationKeyMap = {
+    ModDependencies: "Dependencies",
+    ModBlockers: "Blocks",
+    ModReferences: "References",
+  };
+
+  convertInner(
+    associationName: "ModDependencies" | "ModBlockers" | "ModReferences",
+    inputObj: InputSchema,
+    outputObj: OutputSchema
+  ) {
+    const property = getDefaultProperty(inputObj);
+    const outputAssociationKey = this.outputAssociationKeyMap[associationName];
+
+    if (!outputObj.Mod?.[outputAssociationKey as OutputModAssociationKey]) {
+      if (!outputObj.Mod) {
+        outputObj.Mod = {} as any;
+      }
+      outputObj.Mod[outputAssociationKey as OutputModAssociationKey] =
+        {} as any;
+    }
+    const dependenies = wrap(property[associationName]?.Association)?.reduce(
+      (acc, cur) => {
+        cur?.Type &&
+          acc[cur.Type]?.push({
+            "@_id": cur.Id || (undefined as any),
+            "@_minversion": cur.MinVersion.toString() || (undefined as any),
+            "@_maxversion": cur.MaxVersion.toString() || (undefined as any),
+            "@_title": cur.Name || (undefined as any),
+          });
+        return acc;
+      },
+      {
+        Mod: [] as OutputModAssociationType[],
+        Dlc: [] as OutputModAssociationType[],
+        Game: [] as OutputModAssociationType[],
+      }
+    );
+
+    const empty =
+      dependenies.Game.length === 0 &&
+      dependenies.Mod.length === 0 &&
+      dependenies.Dlc.length === 0;
+    outputObj.Mod[outputAssociationKey as OutputModAssociationKey] = !empty
+      ? {
+          Game:
+            dependenies?.Game.length > 0 ? unwrap(dependenies.Game) : undefined,
+          Mod:
+            dependenies?.Mod.length > 0 ? unwrap(dependenies.Mod) : undefined,
+          Dlc:
+            dependenies?.Dlc.length > 0 ? unwrap(dependenies.Dlc) : undefined,
+        }
+      : undefined;
+  }
+
   convert(inputObj: InputSchema, outputObj: OutputSchema) {
-    // TODO
+    this.convertInner("ModDependencies", inputObj, outputObj);
+    this.convertInner("ModBlockers", inputObj, outputObj);
+    this.convertInner("ModReferences", inputObj, outputObj);
   }
 }
 

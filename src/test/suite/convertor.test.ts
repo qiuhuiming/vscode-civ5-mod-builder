@@ -6,7 +6,10 @@ import * as vscode from "vscode";
 // import * as myExtension from '../../extension';
 import { XMLBuilder, XMLParser } from "fast-xml-parser";
 import { testInputJs, testOutputJs } from "./testObj";
-import { MetaConvertor } from "../../compiler/convertor";
+import {
+  MetaConvertor,
+  ModAssociationConvertor,
+} from "../../compiler/convertor";
 import { InputSchema, OutputSchema } from "../../compiler/types";
 
 suite("Convertor Test Suite", () => {
@@ -21,4 +24,12 @@ suite("Convertor Test Suite", () => {
     console.log(outputJSON);
   });
 
+  test("MetaConvertor Test", () => {
+    const convertor = new ModAssociationConvertor();
+    const input: InputSchema = testInputJs as any;
+    const output = {} as OutputSchema;
+    convertor.convert(input, output);
+    const outputJSON = JSON.stringify(output);
+    console.log(outputJSON);
+  });
 });
