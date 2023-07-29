@@ -138,7 +138,7 @@ export interface OutputSchema {
     };
     Actions?: {
       OnGetDLLPath?: {
-        SetDllPath: string;
+        SetDllPath: string | string[];
       };
       OnModActivated?: {
         UpdateDatabase: string[] | string;

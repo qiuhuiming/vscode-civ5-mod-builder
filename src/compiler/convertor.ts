@@ -107,7 +107,7 @@ class ModAssociationConvertor extends Convertor {
       outputObj.Mod[outputAssociationKey as OutputModAssociationKey] =
         {} as any;
     }
-    const dependenies = wrap(property[associationName]?.Association)?.reduce(
+    const associations = wrap(property[associationName]?.Association)?.reduce(
       (acc, cur) => {
         cur?.Type &&
           acc[cur.Type]?.push({
@@ -126,17 +126,19 @@ class ModAssociationConvertor extends Convertor {
     );
 
     const empty =
-      dependenies.Game.length === 0 &&
-      dependenies.Mod.length === 0 &&
-      dependenies.Dlc.length === 0;
+      associations.Game.length === 0 &&
+      associations.Mod.length === 0 &&
+      associations.Dlc.length === 0;
     outputObj.Mod[outputAssociationKey as OutputModAssociationKey] = !empty
       ? {
           Game:
-            dependenies?.Game.length > 0 ? unwrap(dependenies.Game) : undefined,
+            associations?.Game.length > 0
+              ? unwrap(associations.Game)
+              : undefined,
           Mod:
-            dependenies?.Mod.length > 0 ? unwrap(dependenies.Mod) : undefined,
+            associations?.Mod.length > 0 ? unwrap(associations.Mod) : undefined,
           Dlc:
-            dependenies?.Dlc.length > 0 ? unwrap(dependenies.Dlc) : undefined,
+            associations?.Dlc.length > 0 ? unwrap(associations.Dlc) : undefined,
         }
       : undefined;
   }
@@ -150,7 +152,39 @@ class ModAssociationConvertor extends Convertor {
 
 class ModActionConvertor extends Convertor {
   convert(inputObj: InputSchema, outputObj: OutputSchema) {
-    // TODO
+    if (!outputObj.Mod?.Actions) {
+      if (!outputObj.Mod) {
+        outputObj.Mod = {} as any;
+      }
+      outputObj.Mod.Actions = {} as any;
+    }
+
+    const actions = wrap(getDefaultProperty(inputObj).ModActions?.Action);
+    if (!actions) {
+      return;
+    }
+
+    actions.forEach((action) => {
+      // outputObj.Mod.Actions[action.Set][action.Type] = [action.FileName...]
+      if (!action) {
+        return;
+      }
+
+      if (!outputObj!.Mod!.Actions![action.Set]) {
+        outputObj!.Mod!.Actions![action.Set] = {} as any;
+      }
+
+      const set = outputObj!.Mod!.Actions![action.Set]! as {
+        [key: string]: string | string[];
+      };
+      if (!set[action.Type]) {
+        set[action.Type] = action.FileName;
+      } else if (typeof set[action.Type] === "string") {
+        set[action.Type] = [set[action.Type] as string, action.FileName];
+      } else if (Array.isArray(set[action.Type])) {
+        (set[action.Type] as string[]).push(action.FileName);
+      }
+    });
   }
 }
 

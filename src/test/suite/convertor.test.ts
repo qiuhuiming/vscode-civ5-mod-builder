@@ -8,6 +8,7 @@ import { XMLBuilder, XMLParser } from "fast-xml-parser";
 import { testInputJs, testOutputJs } from "./testObj";
 import {
   MetaConvertor,
+  ModActionConvertor,
   ModAssociationConvertor,
 } from "../../compiler/convertor";
 import { InputSchema, OutputSchema } from "../../compiler/types";
@@ -24,8 +25,17 @@ suite("Convertor Test Suite", () => {
     console.log(outputJSON);
   });
 
-  test("MetaConvertor Test", () => {
+  test("AssociationConvertor Test", () => {
     const convertor = new ModAssociationConvertor();
+    const input: InputSchema = testInputJs as any;
+    const output = {} as OutputSchema;
+    convertor.convert(input, output);
+    const outputJSON = JSON.stringify(output);
+    console.log(outputJSON);
+  });
+
+  test("ActionConvertor Test", () => {
+    const convertor = new ModActionConvertor();
     const input: InputSchema = testInputJs as any;
     const output = {} as OutputSchema;
     convertor.convert(input, output);
