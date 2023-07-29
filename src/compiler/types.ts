@@ -66,16 +66,16 @@ export interface PropertyType {
   ModReferences: {
     Association: ModAssociationType[] | ModAssociationType;
   };
-  ModDependencies: {
+  ModDependencies?: {
     Association: ModAssociationType[] | ModAssociationType;
   };
-  ModBlockers: {
+  ModBlockers?: {
     Association: ModAssociationType[] | ModAssociationType;
-  }[];
-  ModActions: {
+  };
+  ModActions?: {
     Action: ModActionType[] | ModActionType;
   };
-  ModContent: {
+  ModContent?: {
     Content: ModContentType[] | ModContentType;
   };
 }
