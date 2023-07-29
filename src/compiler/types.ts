@@ -136,6 +136,9 @@ export interface OutputSchema {
       OnModActivated?: {
         UpdateDatabase: string[] | string;
       };
+      OnCreateModUserData?: {
+        // TODO: add this
+      }
     };
     EntryPoints: {
       EntryPoint: {
