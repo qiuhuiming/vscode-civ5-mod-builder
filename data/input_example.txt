@@ -1,0 +1,3352 @@
+{
+  "?xml": {
+    "@_version": "1.0",
+    "@_encoding": "utf-8",
+  },
+  Project: {
+    PropertyGroup: [
+      {
+        Configuration: {
+          "#text": "Default",
+          "@_Condition": "'$(Configuration)' == ''",
+        },
+        ProjectGuid: "{0d66d522-b624-4bc5-acfe-15a0c5b729f4}",
+        Name: "(1) Community Patch",
+        Guid: "d1b6328c-ff44-4b0d-aad7-c657f83610cd",
+        ModVersion: 117,
+        Stability: "Stable",
+        Teaser: "(3.6.2) Bugfixes, AI Improvements, Game Optimizations and API Extensions for Civ V",
+        Description: "Contains core AI improvements and bugfixes for the Civ 5 BNW DLL. Also contains support for the Vox Populi unofficial expansion and its associated mods.",
+        Authors: "CivFanatics Community Patch Project Team",
+        SpecialThanks: "",
+        Categories: "$Categories$",
+        AffectsSavedGames: true,
+        MinCompatibleSaveVersion: 117,
+        SupportsSinglePlayer: true,
+        SupportsMultiplayer: true,
+        SupportsHotSeat: true,
+        SupportsMac: true,
+        ReloadUnitSystem: true,
+        ReloadLandmarkSystem: true,
+        ReloadStrategicViewSystem: true,
+        HideSetupGame: false,
+        Homepage: "https://forums.civfanatics.com/forums/community-patch-project.497/",
+        AssemblyName: "Mod Template",
+        RootNamespace: "Mod Template",
+        ModDependencies: {
+          Association: [
+            {
+              Type: "Game",
+              Name: "",
+              Id: "",
+              MinVersion: "1.0.3.124",
+              MaxVersion: "1.0.3.999",
+            },
+            {
+              Type: "Dlc",
+              Name: "Expansion 2 - Brave New World",
+              Id: "6DA07636-4123-4018-B643-6575B4EC336B",
+              MinVersion: 0,
+              MaxVersion: 999,
+            },
+          ],
+        },
+        ModReferences: "",
+        ModBlockers: {
+          Association: [
+            {
+              Type: "Mod",
+              Name: "Artificial Unintelligence",
+              Id: "a4a8d2bb-cffd-4d8e-8893-d773f25b6fe1",
+              MinVersion: 0,
+              MaxVersion: 999,
+            },
+            {
+              Type: "Mod",
+              Name: "Civilization IV Diplomatic Features - Standalone",
+              Id: "275db698-0c69-401e-89a8-7eab501b6bcf",
+              MinVersion: 0,
+              MaxVersion: 999,
+            },
+            {
+              Type: "Mod",
+              Name: "(1a) Civ IV Diplomatic Features - CP",
+              Id: "781d81cf-49e1-4acb-ae5f-b9e3713f98d3",
+              MinVersion: 0,
+              MaxVersion: 999,
+            },
+          ],
+        },
+        ModActions: {
+          Action: [
+            {
+              Set: "OnGetDLLPath",
+              Type: "SetDllPath",
+              FileName: "CvGameCore_Expansion2.dll",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/CommunityPatchTables.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Tables/CoreTableEntries.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Tables/CoreTableAdditions.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Tables/DifficultyTables.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Tables/DifficultyTables.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Tables/CustomModOptions.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/CommunityPatchDLLChanges.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/CoreDefines.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/CoreChanges.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/CoreValues.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/CoreChanges.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/NewText.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/ExtraSpyTable.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/API/Achievements.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/API/Espionage.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/API/Extensions.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/API/PlotBasedDamage.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/API/PlotYields.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/API/Religion.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/BUGFIX/FeatureRemoval.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/BUGFIX/GoodyHutMessages.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/BUGFIX/SpyNames.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/BUGFIX/UnitclassNotUnit.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/BUGFIX/UnitclassNotUnit.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/EVENTS/CanMoveInto.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/EVENTS/CityBombard.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/EVENTS/DiploModifiers.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/EVENTS/BattleRoles.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/AlpinePasses.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/CannotEmbark.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/CityWorking.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/AutomatonWorkers.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/ExcludeFromGifts.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/GreatworkYieldtypes.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/MoveAfterUpgrade.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/PassableForts.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/PromotionClasses.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/SeparateGreatAdmiral.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/StackingRules.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/GLOBAL/Relocation.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/PROMOTIONS/CrossIce.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/PROMOTIONS/CrossMountains.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/PROMOTIONS/CrossOceans.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/PROMOTIONS/DeepWaterEmbarkation.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/PROMOTIONS/HalfMove.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/PROMOTIONS/ImprovementBonus.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/PROMOTIONS/UnitNaming.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/PROMOTIONS/VariableRecon.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/PROMOTIONS/VariableRecon.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/RELIGION/ConversionModifiers.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/RELIGION/LocalReligions.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/RELIGION/PlotYields.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/RELIGION/PolicyBranchFaithGp.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/TRADE/RouteScaling.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/TRAITS/AnyBelief.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/TRAITS/CrossesIce.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/TRAITS/TradeRouteBonuses.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/TRAITS/OtherPrereqs.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/UI/CityExpansion.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/EraSpecificArtists.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/EraSpecificMusicians.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/EraSpecificWriters.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/NewArtists.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/NewWriters.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/TextChanges.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/TerrainFixes.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/Automates.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/WorldChanges.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/SaneTerrain.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/MinorCivQuestRewards.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/DummyTrigger.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Text/CoreText_en_US.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Text/CoreText_en_US.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/PNM Mods DB/PROMOTIONS/DeepWater.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/UnitFixes.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Tables/GameEventsTable.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Modules/Events/Text/en_US/City_en_US.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Modules/Events/Text/en_US/EventCore_en_US.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Modules/Events/Text/en_US/Player_en_US.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/New_CIV5AICityStrategies.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/New_CIV5AIMilitaryStrategies.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/New_CIV5MultiUnitFormations.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Modules/Events/CoreEvents.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Tables/JFDContracts.xml",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/CargoShipMod.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Changes/DiploAIOptions.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/DiploApproachWeights.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/DiploOpinionWeights.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Core Files/Core Values/FasterAircraft.sql",
+            },
+            {
+              Set: "OnModActivated",
+              Type: "UpdateDatabase",
+              FileName: "Modules/MoreGP/ExtraGPs.sql",
+            },
+          ],
+        },
+        ModContent: {
+          Content: [
+            {
+              Type: "InGameUIAddin",
+              Name: "EventChoice",
+              Description: "EventChoice",
+              FileName: "Core Files/CoreLua/EventChoicePopup.lua",
+            },
+            {
+              Type: "InGameUIAddin",
+              Name: "Event",
+              Description: "Event",
+              FileName: "Core Files/CoreLua/EventPopup.lua",
+            },
+            {
+              Type: "InGameUIAddin",
+              Name: "CityEvent",
+              Description: "CityEvent",
+              FileName: "Core Files/CoreLua/EventChoicePopupCity.lua",
+            },
+            {
+              Type: "InGameUIAddin",
+              Name: "CityEventPopup",
+              Description: "CityEventPopup",
+              FileName: "Core Files/CoreLua/CityEventPopup.lua",
+            },
+            {
+              Type: "InGameUIAddin",
+              Name: "EventOverview.lua",
+              Description: "EventOverview.lua",
+              FileName: "Core Files/CoreLua/EventOverview.xml",
+            },
+            {
+              Type: "InGameUIAddin",
+              Name: "EspionageChoice",
+              Description: "EspionageChoice",
+              FileName: "Core Files/CoreLua/EspionageChoicePopup.lua",
+            },
+          ],
+        },
+        ReloadAudioSystem: true,
+      },
+      {
+        OutputPath: ".",
+        "@_Condition": "'$(Configuration)' == 'Default'",
+      },
+      {
+        PackageMod: true,
+        DeployMod: false,
+        "@_Condition": "'$(Configuration)' == 'Package Only'",
+      },
+      {
+        PackageMod: false,
+        DeployMod: true,
+        "@_Condition": "'$(Configuration)' == 'Deploy Only'",
+      },
+    ],
+    ItemGroup: [
+      {
+        Folder: [
+          {
+            "@_Include": "Core Files\\",
+          },
+          {
+            "@_Include": "Core Files\\Core Changes\\",
+          },
+          {
+            "@_Include": "Core Files\\Core Changes\\GreatArt",
+          },
+          {
+            "@_Include": "Core Files\\Core Changes\\CompressedArt",
+          },
+          {
+            "@_Include": "Core Files\\Core Tables\\",
+          },
+          {
+            "@_Include": "Core Files\\Core Values\\",
+          },
+          {
+            "@_Include": "Core Files\\CoreLua",
+          },
+          {
+            "@_Include": "Core Files\\CoreLua\\EventArt",
+          },
+          {
+            "@_Include": "Core Files\\Text",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB\\API\\",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB\\ART\\",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB\\BUGFIX\\",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB\\EVENTS\\",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB\\RELIGION\\",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB\\TRADE\\",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB\\TRAITS\\",
+          },
+          {
+            "@_Include": "Core Files\\PNM Mods DB\\UI\\",
+          },
+          {
+            "@_Include": "LUA",
+          },
+          {
+            "@_Include": "Modules",
+          },
+          {
+            "@_Include": "Modules\\Events",
+          },
+          {
+            "@_Include": "Modules\\Events\\Text",
+          },
+          {
+            "@_Include": "Modules\\Events\\Text\\en_US",
+          },
+          {
+            "@_Include": "Modules\\MoreGP",
+          },
+          {
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items",
+          },
+          {
+            "@_Include": "Mapscript Fixes",
+          },
+        ],
+      },
+      {
+        Content: [
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CommunityPatchTables.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\alexander.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\alrashid.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\askia.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\augustus.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\aztec.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\bismark.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\casimir.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\catherine.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\corp80_base.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\corp80_hl.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\CultureLocal.ggxml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\CultureLocal.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\darius.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\DC45_Corporations.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\dom_catherine.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\dom_nebuchadnezzar.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\elizabeth.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\espionagenotification80.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\espionagenotificationglow80.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\EventFrame.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\ghandi.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\hiawatha.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\instantyieldnotification80.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\instantyieldnotificationglow80.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\montezuma.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\napoleon.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\nebuchadnezzar.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\notificationcityeventglow.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\notificationcityeventorange.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\notificationeventglow.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\notificationeventorange.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\notificationMPdiplo128.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\notificationMPdiploglow128.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\oda.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\pacal_the_great.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\ramesses.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\ramkhamaeng.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\sulieman.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\TradeMP.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\washington.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\wonderconceptbroadway.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\wonderconceptgreatwall.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\wonderconceptnotredame.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\CompressedArt\\wu.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\CoreChanges.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\CommunityPatchDLLChanges.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\DiploAIOptions.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\EraSpecificWriters.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\EraSpecificArtists.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\EraSpecificMusicians.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\CoreChanges.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\artifact.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\esp_thief_framedicon45.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\Sarcophagus.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\UnitFixes.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\esp_spy_rigginelectioncooldown22.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\SaneTerrain.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\WorldChanges.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\TerrainFixes.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\ancientchina.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\ancientjapan.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\ancientpersia.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\ashurbanipalstatue.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\augustusstatue.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\aztec.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\bayeuxtapestry.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\classicalgreece.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\egyptianmefertem.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\justinian.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\kalamkari.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\kells.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\lascaux.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\medieval.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\resource_furs.gr2",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Changes\\GreatArt\\suttonhoo.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\NewWriters.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\NewArtists.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\NewText.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Changes\\TextChanges.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Tables\\CoreTableAdditions.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Tables\\CoreTableEntries.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Tables\\CustomModOptions.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Tables\\DifficultyTables.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Tables\\DifficultyTables.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Tables\\JFDContracts.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Tables\\SampleEvents.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Tables\\GameEventsTable.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\CargoShipMod.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\CoreDefines.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\ExtraSpyTable.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\CoreValues.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\DiploApproachWeights.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\DiploOpinionWeights.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\Automates.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\DummyTrigger.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\FasterAircraft.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\MinorCivQuestRewards.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\New_CIV5AICityStrategies.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\New_CIV5AIMilitaryStrategies.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Core Values\\New_CIV5MultiUnitFormations.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Values\\TechAwardPopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Values\\TechAwardPopup.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\Core Values\\TechHelpInclude.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\badeventdefaultbackground.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\Bombardment.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\cityeventdefaultbackground.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\CityEventPopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\CityEventPopup.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\CityEventsInfo.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\CityEventsInfo.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\CityRecentEventsInfo.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\CityRecentEventsInfo.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\EnemyUnitPanel.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\EventArt\\AirBalloon.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\EventArt\\CounterSpy.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\EventArt\\FireWorks.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\EventArt\\Focus.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\EventArt\\GoldStandard.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\EventArt\\HarborTrade.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\EventArt\\StockMarketCrash.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\EventArt\\SunHeat.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\EventOverview.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\EventChoice.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\EventChoicePopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\EventChoicePopup.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\EventChoicePopupCity.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\EventChoicePopupCity.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\EventPopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\EventPopup.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\EventOverview.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\EspionageChoicePopup.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\InGame.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\CoreLua\\EspionageChoicePopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\MPList.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\NewEraPopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\PathHelpManager.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\RecentEventsInfo.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\RecentEventsInfo.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\playereventdefaultbackground.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\PlayerEventsInfo.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\PlayerEventsInfo.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\ReplayViewer.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\ReplayViewer.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\SaveMenu.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\SaveMenu.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\StagingRoom.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\CoreLua\\WorldView.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\API\\Achievements.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\API\\Espionage.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\API\\Extensions.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\API\\PlotBasedDamage.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\API\\PlotYields.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\API\\Religion.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\PNM Mods DB\\ART\\yieldatlas_128_admiral.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\PNM Mods DB\\ART\\yieldatlas_128_culturelocal.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\PNM Mods DB\\ART\\yieldatlas_128_general.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\PNM Mods DB\\ART\\YieldAtlas_128_GoldenAge.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Core Files\\PNM Mods DB\\ART\\YieldAtlas_128_Tourism.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\BUGFIX\\FeatureRemoval.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\BUGFIX\\GoodyHutMessages.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\BUGFIX\\SpyNames.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\BUGFIX\\UnitclassNotUnit.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\BUGFIX\\UnitclassNotUnit.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\EVENTS\\BattleRoles.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\EVENTS\\CanMoveInto.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\EVENTS\\CityBombard.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\EVENTS\\DiploModifiers.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\AlpinePasses.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\CannotEmbark.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\CityWorking.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\AutomatonWorkers.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\ExcludeFromGifts.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\GreatworkYieldtypes.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\MoveAfterUpgrade.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\PassableForts.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\PromotionClasses.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\Relocation.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\SeparateGreatAdmiral.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\GLOBAL\\StackingRules.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\CrossIce.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\CrossMountains.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\CrossOceans.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\DeepWaterEmbarkation.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\DeepWater.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\HalfMove.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\ImprovementBonus.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\UnitNaming.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\VariableRecon.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\PROMOTIONS\\VariableRecon.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\RELIGION\\ConversionModifiers.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\RELIGION\\LocalReligions.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\RELIGION\\PlotYields.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\RELIGION\\PolicyBranchFaithGp.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\TRADE\\RouteScaling.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\TRAITS\\AnyBelief.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\TRAITS\\CrossesIce.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\TRAITS\\OtherPrereqs.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\TRAITS\\TradeRouteBonuses.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\PNM Mods DB\\UI\\CityExpansion.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Text\\CoreText_en_US.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Core Files\\Text\\CoreText_en_US.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "CvGameCore_Expansion2.dll",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\ActionInfoPanel.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\AssignStartingPlots.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\CityBannerManager.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\CityBannerManager.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\CityStateDiploPopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\CityStateStatusHelper.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\CityView.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\CultureOverview.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\CultureOverview.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\DeclareWarPopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\DeclareWarPopup.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\Demographics.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\DiploCurrentDeals.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\DiploGlobalRelationships.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\DiploList.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\DiploTrade.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\DiscussionDialog.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\DiscussionDialog.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\EconomicGeneralInfo.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\EspionageOverview.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\EspionageOverview.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\GPList.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\InfoTooltipInclude.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\LeaderHeadRoot.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\LeaderHeadRoot.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\LeagueOverview.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\LeagueOverview.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\NaturalWonderPopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\WonderPopup.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\NotificationPanel.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\NotificationPanel.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\ProductionPopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\PuppetCityPopup.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\ReligionOverview.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\SimpleDiploTrade.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\TopPanel.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\TradeLogic.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\TradeRouteHelpers.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\YieldIconManager.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "LUA\\YieldIconManager.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Modules\\Events\\CoreEvents.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Modules\\Events\\Text\\en_US\\City_en_US.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Modules\\Events\\Text\\en_US\\EventCore_en_US.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Modules\\Events\\Text\\en_US\\Player_en_US.xml",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "False",
+            "@_Include": "Modules\\MoreGP\\ExtraGPs.sql",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__010.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__020.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__030.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__040.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__050.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__060.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__070.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__080.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__090.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__100.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__110.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__120.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__130.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__140.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__150.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__160.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__170.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__180.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__190.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__200.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__210.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__220.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__230.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__240.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__250.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__260.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__270.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__280.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__290.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__300.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__310.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__320.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__330.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__340.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__350.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__360.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__370.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__380.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__390.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__400.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__410.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__420.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__430.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__440.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__450.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__460.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__470.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__480.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__490.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__500.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__510.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__520.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__530.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__540.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__550.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__560.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__570.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__580.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__590.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__600.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__610.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__620.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__630.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__640.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__650.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__660.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__670.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__680.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__690.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__700.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__710.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__720.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__730.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__740.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__750.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__760.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__770.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__780.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__790.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__800.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__810.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__820.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__830.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__840.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__850.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__860.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__870.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__880.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__890.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\A__900.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_acd_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_asi_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_asi_02.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_chn_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_cls_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_cls_02.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_cls_03.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_cls_04.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_cls_05.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_cls_07.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_cls_10.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_dig_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_fms_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_ftv_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_grc_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_gtr_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_ind_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_ind_02.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_jaz_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_jaz_02.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_lat_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_lat_02.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_med_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_mic_03.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_mic_04.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_mic_05.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_opr_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_opr_02.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_ori_03.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_ori_07.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_ori_08.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_ori_09.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_rap_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_rcp_08.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_scd_02.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_scd_03.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_scd_05.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_scd_08.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_scn_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_scn_03.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_scn_07.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_scn_08.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_scn_09.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_spl_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_sum_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\BG_tha_01.dds",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__010.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__020.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__030.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__040.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__050.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__060.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__070.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__080.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__090.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__100.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__110.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__120.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__130.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__140.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__150.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__160.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__170.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__180.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__190.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__200.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__210.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__220.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__230.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__240.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__250.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__260.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__270.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__280.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__290.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__300.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__310.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__320.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__330.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__340.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__350.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__360.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__370.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__380.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__390.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__400.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__410.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__420.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__430.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__440.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__450.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__460.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__470.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__480.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__490.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__500.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__510.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__520.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__530.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__540.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__550.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__560.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__570.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__580.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__590.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__600.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__610.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__620.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__630.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__640.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__650.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__660.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__670.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__680.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__690.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__700.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__710.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__720.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__730.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__740.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__750.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__760.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__770.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__780.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__790.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__800.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__810.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__820.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__830.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__840.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__850.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__860.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__870.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__880.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__890.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\M__900.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__010.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__020.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__030.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__040.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__050.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__060.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__070.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__080.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__090.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__100.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__110.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__120.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__130.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__140.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__150.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__160.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__170.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__180.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__190.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__200.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__210.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__220.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__230.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__240.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__250.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__260.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__270.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__280.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__290.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__300.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__310.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__320.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__330.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__340.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__350.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__360.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__370.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__380.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__390.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__400.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__410.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__420.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__430.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__440.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__450.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__460.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__470.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__480.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__490.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__500.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__510.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__520.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__530.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Modules\\MoreGP\\Extra_GPs_items\\W__540.mp3",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Mapscript Fixes\\Boreal.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Mapscript Fixes\\Highlands.lua",
+          },
+          {
+            SubType: "Lua",
+            ImportIntoVFS: "True",
+            "@_Include": "Mapscript Fixes\\Terra.lua",
+          },
+        ],
+      },
+    ],
+    Import: {
+      "@_Project": "$(MSBuildExtensionsPath)\\Firaxis\\ModBuddy\\Civ5Mod.targets",
+    },
+    "@_DefaultTargets": "Deploy",
+    "@_ToolsVersion": "4.0",
+    "@_xmlns": "http://schemas.microsoft.com/developer/msbuild/2003",
+  },
+}
