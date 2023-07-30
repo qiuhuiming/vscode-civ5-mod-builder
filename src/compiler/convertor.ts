@@ -208,7 +208,6 @@ class ModContentConvertor extends Convertor {
     }
 
     const contentList = wrap(property.ModContent?.Content);
-    console.log("!!!3412", contentList);
     if (!contentList || contentList.length === 0) {
       return;
     }

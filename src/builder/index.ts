@@ -87,7 +87,7 @@ export class Builder {
       }
       if (!willCopy) {
         const toStatus = await this.reader.stat(toPath);
-        willCopy = fromStatus.modifiedAt !== toStatus.modifiedAt;
+        willCopy = fromStatus.modifiedAt.getTime() !== toStatus.modifiedAt.getTime();
       }
 
       if (willCopy) {
