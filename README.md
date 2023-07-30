@@ -1,71 +1,31 @@
-# civ5-mod-builder README
+# civ5-mod-builder
 
-This is the README for your extension "civ5-mod-builder". After writing up a brief description, we recommend including the following sections.
+civ5-mod-builder is an extension that serves as an alternative to Modbuddy for Civilization 5 modders. It offers a significant improvement in building speed and seamless integration with Visual Studio Code.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Faster building speed compared to Modbuddy.
+- Easy integration with Visual Studio Code as an extension.
+- Command Line Interface for convenient usage.
 
-For example if there is an image subfolder under your extension project workspace:
+## Command Line Interface
 
-\!\[feature X\]\(images/feature-x.png\)
+Before using the command line interface, ensure that you have Node.js installed on your system.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+To get started, follow these steps:
 
-## Requirements
+1. Install the dependencies by running the following command inside the civ5-mod-builder directory:
+```bash
+cd civ5-mod-builder
+npm install
+```
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+2. Compile and run the mod builder using the following commands:
+```bash
+npm run compile # compile
+node out/cli/index.js --to "C:\Users\your_username\Documents\My Games\Sid Meier's Civilization 5\MODS" --from "your_civ5_mod_proj.civ5proj" # run
+```
 
-## Extension Settings
+Make sure to replace "your_username" with your actual Windows username and "your_civ5_mod_proj.civ5proj" with the name of your Civilization 5 mod project file.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**Enjoy modding your Civilization 5 game with increased efficiency and productivity using civ5-mod-builder!**
