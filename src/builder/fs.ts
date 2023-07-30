@@ -1,17 +1,3 @@
-// implement:
-// export interface FileReader {
-//   read(path: string): Promise<string>;
-//   status(path: string): Promise<FileStatus>;
-//   list(path: string): Promise<string[]>;
-// }
-
-// export interface FileWriter {
-//   write(data: string, path: string): Promise<boolean>;
-//   mkdir(path: string): Promise<boolean>;
-//   copy(src: string, dest: string): Promise<boolean>;
-//   remove(path: string): Promise<boolean>;
-// }
-
 import * as fs from "fs";
 import { FileReader, FileStatus, FileWriter } from ".";
 import path = require("path");
