@@ -7,7 +7,7 @@ import {
   PropertyType,
 } from "./types";
 
-function wrap<T>(item: T | T[]): T[] {
+export function wrap<T>(item: T | T[]): T[] {
   if (Array.isArray(item)) {
     return item;
   } else {
@@ -195,39 +195,60 @@ class ModActionConvertor extends Convertor {
   }
 }
 
+// replace \ with /
+function convertPath(path: string): string {
+  return path.replace(/\\/g, "/");
+}
+
 class ModContentConvertor extends Convertor {
   convert(inputObj: InputSchema, outputObj: OutputSchema) {
-    const contentList = wrap(getDefaultProperty(inputObj).ModContent?.Content);
-    if (!contentList) {
+    const property = getDefaultProperty(inputObj);
+    if (!property.ModContent) {
+      return;
+    }
+
+    const contentList = wrap(property.ModContent?.Content);
+    console.log("!!!3412", contentList);
+    if (!contentList || contentList.length === 0) {
       return;
     }
 
     if (!outputObj.Mod) {
       outputObj.Mod = {} as any;
     }
-    if (!outputObj.Mod.EntryPoints) {
-      outputObj.Mod.EntryPoints = {
-        EntryPoint: [],
-      } as any;
-    }
 
     const entryPoints: EntryPointType[] = contentList.map((content) => {
+      let fileName = content?.FileName;
+      if (typeof fileName === "string") {
+        // replace \ with /
+        fileName = convertPath(fileName);
+      }
       return {
         Name: content?.Name,
         Description: content?.Description,
-        "@_file": content?.FileName,
+        "@_file": fileName,
         "@_type": content?.Type,
       };
     });
 
-    outputObj!.Mod!.EntryPoints!.EntryPoint = unwrap(entryPoints);
+    if (!entryPoints || entryPoints.length === 0) {
+      outputObj!.Mod!.EntryPoints = undefined as any;
+    } else {
+      if (!outputObj.Mod.EntryPoints) {
+        outputObj.Mod.EntryPoints = {
+          EntryPoint: [],
+        } as any;
+      }
+      outputObj!.Mod!.EntryPoints!.EntryPoint = unwrap(entryPoints);
+    }
   }
 }
 
 class ModFileConvertor extends Convertor {
   convert(inputObj: InputSchema, outputObj: OutputSchema) {
-    const fileItems = inputObj.Project.ItemGroup.find((group) => group.Content)
-      ?.Content;
+    const fileItems = wrap(inputObj.Project.ItemGroup).find(
+      (group) => group.Content
+    )?.Content;
     if (!fileItems) {
       return;
     }
@@ -239,14 +260,19 @@ class ModFileConvertor extends Convertor {
       outputObj.Mod.Files = {} as any;
     }
 
-    const files = fileItems.map((fileItem) => {
+    const files = wrap(fileItems).map((fileItem) => {
       // random md5 string (length=32)
       let md5 = Array.from({ length: 32 });
       for (let i = 0; i < 32; i++) {
         md5[i] = Math.floor(Math.random() * 16).toString(16);
       }
+      let fileName = fileItem["@_Include"];
+      if (typeof fileName === "string") {
+        // replace \ with /
+        fileName = convertPath(fileName);
+      }
       return {
-        "#text": fileItem["@_Include"],
+        "#text": fileName,
         "@_md5": md5.join("").toUpperCase(),
         "@_import":
           fileItem.ImportIntoVFS === "True" ? "1" : ("0" as "1" | "0"),

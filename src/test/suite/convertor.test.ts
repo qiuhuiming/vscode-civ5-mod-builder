@@ -4,8 +4,7 @@ import * as assert from "assert";
 // as well as import your extension to test it
 import * as vscode from "vscode";
 // import * as myExtension from '../../extension';
-import { XMLBuilder, XMLParser } from "fast-xml-parser";
-import { testInputJs, testOutputJs } from "./testObj";
+import { testInputJs } from "./testObj";
 import {
   Convertor,
   MetaConvertor,
@@ -89,10 +88,10 @@ suite("Convertor Test Suite", () => {
     const dataPath = path.resolve(workspaceDir, "./data/input_example.xml");
     const input = await vscode.workspace.fs.readFile(vscode.Uri.file(dataPath));
     const inputStr = input.toString();
-    const outputStr = compile(inputStr);
+    const outputResult = compile(inputStr);
 
     // write string to ./data/tmp/ut_output_example.xml
     const outputPath = path.resolve(workspaceDir, "./data/tmp/ut_output_example.xml");
-    await vscode.workspace.fs.writeFile(vscode.Uri.file(outputPath), Buffer.from(outputStr));
+    await vscode.workspace.fs.writeFile(vscode.Uri.file(outputPath), Buffer.from(outputResult.xmlStr));
   });
 });
