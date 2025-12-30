@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "civ5-mod-builder"
+version = "0.0.3"
+description = "Build Civilization V .civ5proj projects into .modinfo folders."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+[project.scripts]
+civ5-mod-builder = "civ5_mod_builder.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["civ5_mod_builder*"]
+
